@@ -1,0 +1,191 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SAB Portfolio</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@700&display=swap" rel="stylesheet">
+    <style>
+      .garamond {
+        font-family: 'Garamond', serif;
+      }
+      .eb-garamond {
+        font-family: 'EB Garamond', serif;
+      }
+      
+      @keyframes gradientBG {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+      }
+      
+      .animated-gradient {
+        background: linear-gradient(
+          -45deg,
+          #ee7752,
+          #e73c7e,
+          #23a6d5,
+          #23d5ab
+        );
+        background-size: 400% 400%;
+        animation: gradientBG 15s ease infinite;
+      }
+
+      @keyframes float {
+        0% { transform: translateY(0px); text-shadow: 0 5px 15px rgba(0,0,0,0.4); }
+        50% { transform: translateY(-20px); text-shadow: 0 25px 15px rgba(0,0,0,0.2); }
+        100% { transform: translateY(0px); text-shadow: 0 5px 15px rgba(0,0,0,0.4); }
+      }
+
+      .floating-text {
+        animation: float 4s ease-in-out infinite;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      @media (max-width: 768px) {
+        .nav-menu {
+          display: none;
+          position: absolute;
+          top: 70px;
+          left: 0;
+          right: 0;
+          background: linear-gradient(to right, #3b82f6, #8b5cf6, #ec4899);
+          padding: 1rem;
+          flex-direction: column;
+          align-items: center;
+          gap: 1rem;
+        }
+        
+        .nav-menu.active {
+          display: flex;
+        }
+      }
+    </style>
+  </head>
+  
+  <body class="bg-slate-900">
+    <header class="flex justify-between items-center py-5 px-10 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white relative">
+      <h1 class="text-3xl font-bold" style="font-family: 'Raleway', sans-serif;">S.A.BALAJI</h1>
+      <button class="md:hidden text-2xl" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
+      </button>
+      <nav>
+        <ul class="nav-menu hidden md:flex space-x-6">
+          <li><a href="#home" class="text-xl text-white hover:text-sky-300 font-semibold">Home</a></li>
+          <li><a href="#projects" class="text-xl text-white hover:text-sky-300 font-semibold">Project</a></li>
+          <li><a href="#services" class="text-xl text-white hover:text-sky-300 font-semibold">Services</a></li>
+          <li><a href="#contact" class="text-xl text-white hover:text-sky-300 font-semibold">Contact</a></li>
+          <li><a href="#contact" class="text-xl text-white bg-sky-400 px-5 py-2 rounded-full hover:bg-green-500 font-semibold">Hire Me</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="px-10 md:py-20"></div>
+    <section id="home" class="text-center py-10">
+      <h1 class="text-5xl font-extrabold text-white underline decoration-sky-500 eb-garamond">Welcome to My Portfolio</h1>
+      <p class="text-lg text-gray-400 mt-4">Discover my projects, services, and how we can work together.</p>
+      <h2 class="text-8xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-red-500 to-purple-700 mt-16 floating-text" style="font-family: 'Roboto', sans-serif;">Web Developer</h2>
+      <p class="text-3xl text-sky-400 mt-4" style="font-family: 'Pacifico', cursive;">A Passionate Photographer</p>
+    </section>
+    <section id="services" class="text-center py-10 bg-slate-800 text-white">
+      <h2 class="text-4xl font-bold">About Me</h2>
+      <p class="text-lg mt-4">I am proficient in <span class="text-sky-400 font-semibold">UI/UX Design</span>, <span class="text-sky-400 font-semibold">Front-End Development</span>, and <span class="text-sky-400 font-semibold">Technology Enthusiasm</span>.</p>
+    </section>
+
+    <section id="projects" class="py-16 bg-slate-900 text-white">
+      <h2 class="text-4xl font-bold text-center mb-12">Projects</h2>
+      <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Project Card 1 -->
+        <div class="bg-slate-800 rounded-lg p-6 hover:bg-slate-700 transition-all duration-300 hover:-translate-y-2 hover:shadow-lg hover:shadow-sky-500/50">
+          <h3 class="text-2xl font-bold text-sky-400 mb-4 capitalize tracking-wide">Portfolio Website</h3>
+          <p class="text-gray-300 mb-4">Description of your amazing project goes here. Explain what you built and what technologies you used.</p>
+          <div class="flex gap-2 mb-4">
+            <span class="bg-sky-900 text-sky-200 px-3 py-1 rounded-full text-sm">JavaScript</span>
+            <span class="bg-sky-900 text-sky-200 px-3 py-1 rounded-full text-sm">Tailwind CSS</span>
+          </div>
+          <div class="flex justify-end">
+            <a href="#" class="text-sky-400 hover:text-sky-300 flex items-center gap-2 text-lg">
+              <span>Visit Site</span>
+              <i class="fas fa-external-link-alt"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Project Card 2 -->
+        <div class="bg-slate-800 rounded-lg p-6 hover:bg-slate-700 transition-all duration-300 hover:-translate-y-2 hover:shadow-lg hover:shadow-purple-500/50">
+          <h3 class="text-2xl font-bold text-sky-400 mb-4 capitalize tracking-wide">Student Resources Hub</h3>
+          <p class="text-gray-300 mb-4">Description of your amazing project goes here. Explain what you built and what technologies you used.</p>
+          <div class="flex gap-2">
+            <span class="bg-sky-900 text-sky-200 px-3 py-1 rounded-full text-sm">JavaScript</span>
+            <span class="bg-sky-900 text-sky-200 px-3 py-1 rounded-full text-sm">Tailwind CSS</span>
+          </div>
+          <div class="flex justify-end mt-4">
+            <a href="#" class="text-sky-400 hover:text-sky-300 flex items-center gap-2 text-lg">
+              <span>Visit Site</span>
+              <i class="fas fa-external-link-alt"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Project Card 3 -->
+        <div class="bg-slate-800 rounded-lg p-6 hover:bg-slate-700 transition-all duration-300 hover:-translate-y-2 hover:shadow-lg hover:shadow-pink-500/50">
+          <h3 class="text-2xl font-bold text-sky-400 mb-4 capitalize tracking-wide">GDG Web Wizard Portal</h3>
+          <p class="text-gray-300 mb-4">A web portal for Google Developer Groups Web Wizard event with interactive features and event information.</p>
+          <div class="flex gap-2">
+            <span class="bg-sky-900 text-sky-200 px-3 py-1 rounded-full text-sm">js</span>
+            <span class="bg-sky-900 text-sky-200 px-3 py-1 rounded-full text-sm">Tailwind CSS</span>
+          </div>
+          <div class="flex justify-end mt-4">
+            <a href="https://wizard-xi.vercel.app/" target="_blank" class="text-sky-400 hover:text-sky-300 flex items-center gap-2 text-lg">
+              <span>Visit Site</span>
+              <i class="fas fa-external-link-alt"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="py-16 animated-gradient text-white">
+      <h2 class="text-4xl font-bold text-center mb-12 drop-shadow-lg">Get in Touch</h2>
+      <div class="flex justify-center items-center gap-8">
+        <a href="#" class="text-4xl text-gray-300 hover:text-sky-400 hover:scale-110 transition-all duration-300">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="#" class="text-4xl text-gray-300 hover:text-red-500 hover:scale-110 transition-all duration-300">
+          <i class="fab fa-youtube"></i>
+        </a>
+        <a href="#" class="text-4xl text-gray-300 hover:text-blue-400 hover:scale-110 transition-all duration-300">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="#" class="text-4xl text-gray-300 hover:text-blue-500 hover:scale-110 transition-all duration-300">
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </div>
+      <div class="text-center mt-8">
+        <a href="mailto:sample@gmail.com" class="text-gray-300 hover:text-sky-400 transition-all duration-300 text-lg hover:scale-110 inline-block">sample@gmail.com</a>
+      </div>
+      <div class="text-center mt-8">
+        <p class="text-transparent bg-clip-text bg-gradient-to-r from-slate-100 via-slate-300 to-slate-100 font-bold tracking-wider hover:scale-105 transition-transform duration-300 text-lg p-2 rounded bg-opacity-90">
+          &copy; 2024 S.A.BALAJI. All rights reserved.
+        </p>
+      </div>
+    </section>
+    
+    <script>
+      function toggleMenu() {
+        const menu = document.querySelector('.nav-menu');
+        menu.classList.toggle('active');
+      }
+    </script>
+  </body>
+</html>
